@@ -1,0 +1,44 @@
+<style>
+    table{
+        border-collapse: collapse;
+        font: normal normal 12px Verdana,Arial,Sans-serif;
+        color: #333333;
+    }
+    table th{
+        background: #00bfff;
+        color:#dcdcdc;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    table td{
+        vertical-align: top;
+        padding: 5px 10px;
+        border: 1px solid #696969;
+    }
+    table tr{
+        background: #f5fffa;
+    }
+    table tr:nth-child(even) {
+        background: #f0f8ff;
+    }
+    
+</style>
+
+<html>
+    <head>
+        <title>The Top 10 of My Best Friend</title>
+    </head>
+        <body>
+            <table border="1" width="50%">
+                <tr> <th>No</th><th>Nama</th><th>Alamat</th></tr>
+                <tr> <td>1</td> <td>Fifia Nur Handayani</td> <td>Cirebon</td></tr>
+                <tr> <td>2</td> <td>Anita Ayu Hardani</td> <td>Cirebon</td></tr>
+                <tr> <td>3</td> <td>Anjar Ayuning Lestari</td> <td>Cirebon</td></tr>
+                <tr> <td>4</td> <td>Annisa Saninah</td> <td>Cirebon</td></tr>
+                <tr> <td>5</td> <td>Hardi Nopiandi</td> <td>Cirebon</td></tr>
+                <tr> <td>6</td> <td>Ade Safitri</td> <td>Cirebon</td></tr>
+                <tr> <td>7</td> <td>Alimun Hakim</td> <td>Cirebon</td></tr>
+                <tr> <td>8</td> <td>Bagus Hermawan</td> <td>Cirebon</td></tr>
+                <tr> <td>9</td> <td>Dini Andriyani</td> <td>Cirebon</td></tr>
+                <tr> <td>10</td> <td>Federicko </td> <td>Cirebon</td></tr>
+        </body>
