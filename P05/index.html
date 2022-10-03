@@ -1,1 +1,107 @@
+<style>
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+    table{
+        border-collapse: collapse;
+        font: normal normal 18px Calibri,Times New Roman,Sans-serif;
+        color: #333333;
+    }
+    table th{
+        background: orchid;
+        color:#dcdcdc;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    table td{
+        vertical-align: top;
+        padding: 5px 10px;
+        border: 1px solid #696969;
+        cursor: pointer;
+        transition: .2s;
+    }
+    table, td:hover{
+        background: darkgrey;
+    }
+    table tr{
+        background: #f5fffa;
+    }
+    table tr:nth-child(even) {
+        background: #f0f8ff;
+    }
+    
+</style>
 
+<html>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <head>
+        <title>My Best 5 Friend</title>
+    </head>
+        <body>
+
+            <script>
+                alert('Selamat Datang');
+            </script>
+
+            <h1>My Best 5 Friend</h1>
+            <table border="1" cellpadding="10" cellspacing="0" width="800px">
+            <tr> 
+                <th>No</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th colspan="2">Action</th>
+            </tr>
+
+            <tr class="baris" id="baris__1"> 
+                 <td>1</td> 
+                 <td class="isi" id="nama_mhs__1">Fifia Nur Handayani</td> 
+                 <td class="isi" id="alamat_mhs__1">Cirebon</td> 
+                 <td class="isi" id="hapus__1">Hapus</td>
+            </tr>
+            <tr class="baris" id="baris__2">  
+                 <td>2</td> 
+                 <td class="isi" id="nama_mhs__2">Anita Ayu Hardani</td> 
+                 <td class="isi" id="alamat_mhs__2">Cirebon</td> 
+                 <td class="isi" id="hapus__2">Hapus</td>
+            </tr>
+            <tr class="baris" id="baris__3"> 
+                 <td>3</td> 
+                 <td class="isi" id="nama_mhs__3">Azzahra Rizky Artoti</td> 
+                 <td class="isi" id="alamat_mhs__3">Cirebon</td> 
+                 <td class="isi" id="hapus__3">Hapus</td>
+            </tr>
+            <tr class="baris" id="baris__4"> 
+                 <td>4</td> 
+                 <td class="isi" id="nama_mhs__4">Annisa Saninah</td> 
+                 <td class="isi" id="alamat_mhs__4">Cirebon</td> 
+                 <td class="isi" id="hapus__4">Hapus</td>
+            </tr>
+            <tr class="baris" id="baris__5"> 
+                 <td>5</td> 
+                 <td class="isi" id="nama_mhs__5">Ade Safitri</td> 
+                 <td class="isi" id="alamat_mhs__5">Cirebon</td> 
+                 <td class="isi" id="hapus__5">Hapus</td>
+            </tr>
+            </table>
+
+            <script type="text/javascript">
+            $('.isi').click(function(){
+                let isi = $(this).text();
+                let tid = $(this).prop('id');
+                let rid = tid.split('__');
+                let id_baris = rid[1];
+                let nama_mhs = $('#nama_mhs__'+id_baris).text();
+
+                if(isi=='Hapus'){
+                    let konfirmasi = confirm('Yakin ingin menghapus data atas nama $(nama_mhs)?');
+                    if(!konfirmasi) return;
+
+                    $('#baris__'+id_baris).fadeOut();
+                }else{
+                    alert("Aksi lain untuk cell ini belum ada. Terimakasih sudah mencoba")
+                }
+            });
+            </script>
+        </body>
+</html>
