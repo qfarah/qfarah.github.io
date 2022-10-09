@@ -1,1 +1,175 @@
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: 'Times New Roman', sans-serif;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+.pembungkus-posisi {
+    max-width: 1200 px;
+    margin: 0 auto;
+}
+
+.posisi .pembungkus-posisi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.posisi {
+    color: rgb(34, 31, 31);
+    position: fixed;
+    font-family: 'Times New Roman', sans-serif;
+    background-color: pink;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease-in-out;
+    box-shadow:1px 1px 12px black;
+    z-index: 99;
+}
+
+.posisi ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.posisi a {
+    color: black;
+    text-decoration: none;
+    padding: 9px 13px;
+    transition: all 0.3s ease-in-out;
+}
+
+.posisi b {
+    color: black;
+    text-decoration: none;
+    padding: 9px 13px;
+    transition: all 0.3s ease-in-out;
+}
+
+.posisi a:hover {
+    color: rgb(105, 61, 61);
+}
+
+.posisi b:hover {
+    color: rgb(105, 61, 61);
+}
+
+.posisi .awal {
+    font-weight: bold;
+}
+
+.isi {
+    background-color: white;
+    padding: 30px;
+    display: none;
+    box-shadow: 0px 2px 8px 0px pink;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: justify;
+}
+
+.paragraf {
+    font-family: "Times New Roman";
+    text-align: center;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPA MENU</title>
+
+    <style>
+ 
+    </style>
+</head>
+
+<body>
+    <nav class="posisi">
+        <div class="pembungkus-posisi">
+            <h2>Farah Nur Farida</h2>
+        <ul>
+         <li class="awal" id="nav-sub1"><a href="#">HOME</a></li>
+         <li class="conteks" id="nav-sub2"><a href="#">ABOUT</a></li>
+         <li class="conteks" id="nav-sub3"><a href="#">CONTACT</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <br><br><br>
+    <div class="isi" id="sub1" style="display: none;">
+        <div class="paragraf">
+        <p>Hallo, Saya Farah Nur Farida sedang belajar tentang Javascript</p>
+        </div>
+    </div>
+
+    <div class="isi" id="sub2" style="display: none;">
+        <div class="paragraf">
+        <p>Javascript adalah bahasa pemrograman yang wajib kamu pelajari jika ingin mendalami dunia web development.
+
+            Saat ini javascript tidak hanya digunakan di sisi client (browser) saja. Javascript juga digunakan pada server, console, program desktop, mobile, IoT, game, dan lain-lain.
+            
+            Hal ini membuat javascript semakin populer dan menjadi bahasa yang paling banyak digunakan di Github.
+            
+            </p>
+        </div>
+    </div>
+    
+    <div class="isi" id="sub3" style="display: none;">
+        <div class="paragraf">
+           <p>Mari belajar lebih dalam lagi tentang Javascript, Untuk lebih lanjut bisa menghubungi kontak dibawah ini yaa</p>
+           <p>Email : qfarahnurfarida@gmail.com</p>
+           <p>WA : 082118688492</p>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="spa.js"></script> 
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+    $("nav ul li a").click(function(){
+        $(".isi").slideToggle("fast");
+
+    $('nav ul li.conteks').each(function(index, el) {
+        var subID = el.id.split('-')[1];
+        $('.isi#' + subID).hide();
+    });
+});
+
+    $('nav').delegate('.conteks', 'click', function(event) {
+        var pilihSub = this.id.split('-')[1];
+    console.log(pilihSub);
+    document.location.hash = pilihSub;
+    
+    $('.sub:visible').fadeOut('slow', function() {
+        $('.sub#' + pilihSub).fadeIn('slow');
+    });
+    var $this = $(this);
+    $this.removeClass('conteks').addClass("awal");
+    $this.siblings().addClass('conteks').removeClass('awal');
+    });
+});
+</script>
